@@ -3,336 +3,367 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chicago White Sox — Daily Report · June 19, 2026</title>
+<title>White Sox Intelligence Report · June 22, 2026</title>
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; background: #f5f5f0; color: #1a1a1a; font-size: 14px; line-height: 1.6; }
-  a { color: #C0362C; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; background: #f5f5f0; color: #1a1a1a; font-size: 14px; line-height: 1.6; }
+.page { max-width: 860px; margin: 0 auto; padding: 20px 16px 40px; }
 
-  .container { max-width: 900px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+.hdr { background: #1a1a1a; color: #fff; padding: 16px 20px; border-radius: 10px; margin-bottom: 14px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+.hdr-left { display: flex; align-items: center; gap: 14px; }
+.hdr-logo { width: 44px; height: 44px; border-radius: 50%; background: #C0362C; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 12px; color: #fff; flex-shrink: 0; }
+.hdr h1 { font-size: 18px; font-weight: 600; color: #fff; }
+.hdr-sub { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 2px; }
+.record-big { font-size: 26px; font-weight: 700; color: #C0362C; }
+.record-sub { font-size: 12px; color: rgba(255,255,255,0.5); }
 
-  /* Header */
-  .hdr { background: #1a1a1a; border-radius: 10px; padding: 1.25rem 1.5rem; margin-bottom: 1.25rem; }
-  .hdr-top { display: flex; align-items: center; gap: .75rem; margin-bottom: .75rem; flex-wrap: wrap; }
-  .cws-pill { background: #C0362C; color: #fff; font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 6px; }
-  .new-pill { background: #3B6D11; color: #EAF3DE; font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 6px; }
-  .hdr-title { color: #ffffff; font-size: 18px; font-weight: 600; flex: 1; }
-  .hdr-date { color: #888; font-size: 12px; }
-  .hdr ul { list-style: none; }
-  .hdr ul li { color: #d8d8d8; font-size: 12px; padding: 3px 0; display: flex; gap: 8px; }
-  .hdr ul li::before { content: ""; display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: #C0362C; margin-top: 6px; flex-shrink: 0; }
-  .hdr ul li.hi::before { background: #639922; }
+.exec-box { background: #1a1a1a; border-radius: 10px; padding: 14px 18px; margin-bottom: 14px; }
+.exec-box .section-title { color: rgba(255,255,255,0.4); }
+.headline-bullets { list-style: none; }
+.headline-bullets li { font-size: 13px; color: rgba(255,255,255,0.85); padding: 3px 0; display: flex; gap: 8px; align-items: flex-start; line-height: 1.5; }
+.headline-bullets li::before { content: "→"; color: #C0362C; flex-shrink: 0; font-weight: 700; }
 
-  /* Section labels */
-  .sec { font-size: 11px; font-weight: 600; color: #888; letter-spacing: .06em; text-transform: uppercase; margin: 1rem 0 .5rem; }
+.section-title { font-size: 10px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #888; margin: 14px 0 8px; }
 
-  /* Cards */
-  .card { background: #ffffff; border: 1px solid #e0ddd6; border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: .75rem; }
+.metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 8px; margin-bottom: 12px; }
+.metric-card { background: #f0ede8; border-radius: 8px; padding: 10px 12px; }
+.metric-label { font-size: 10px; color: #888; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 3px; }
+.metric-val { font-size: 22px; font-weight: 700; color: #1a1a1a; }
+.metric-sub { font-size: 11px; color: #888; margin-top: 1px; }
 
-  /* Metric grid */
-  .mg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; margin-bottom: .75rem; }
-  .mc { background: #f0ede8; border-radius: 8px; padding: .65rem 1rem; }
-  .ml { font-size: 11px; color: #666; margin-bottom: 3px; }
-  .mv { font-size: 20px; font-weight: 600; color: #1a1a1a; }
-  .ms { font-size: 11px; color: #999; margin-top: 1px; }
+.l10-row { display: flex; gap: 5px; margin-bottom: 12px; flex-wrap: wrap; }
+.tile { width: 30px; height: 30px; border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; }
+.tile-w { background: #639922; color: #EAF3DE; }
+.tile-l { background: #A32D2D; color: #FCEBEB; }
 
-  /* Game tiles */
-  .tiles { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: .75rem; }
-  .tile { width: 26px; height: 26px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; }
-  .tw { background: #639922; color: #EAF3DE; }
-  .tl { background: #A32D2D; color: #FCEBEB; }
+table.standings { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 14px; }
+table.standings th { text-align: left; font-size: 10px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.04em; padding: 5px 8px; border-bottom: 1px solid #e0ddd6; }
+table.standings td { padding: 7px 8px; border-bottom: 0.5px solid #e0ddd6; }
+table.standings tr.cws td { background: rgba(192,54,44,0.09); font-weight: 600; color: #1a1a1a; }
+table.standings td:last-child { color: #888; font-size: 12px; }
 
-  /* Standings table */
-  .stbl { width: 100%; border-collapse: collapse; font-size: 13px; }
-  .stbl th { color: #666; font-weight: 600; text-align: left; padding: 5px 7px; border-bottom: 1px solid #e0ddd6; }
-  .stbl td { padding: 6px 7px; color: #1a1a1a; }
-  .stbl tr.hl td { background: rgba(192,54,44,.08); font-weight: 600; }
-  .stbl tr:not(:last-child) td { border-bottom: 1px solid #f0ede8; }
+.card { background: #fff; border: 0.5px solid #e0ddd6; border-radius: 10px; padding: 14px 16px; margin-bottom: 12px; }
 
-  /* Turning point block */
-  .tp { background: #f8f6f2; border-left: 3px solid #C0362C; border-radius: 0 6px 6px 0; padding: .65rem .9rem; margin: .6rem 0; }
-  .tp-label { font-size: 11px; font-weight: 600; color: #1a1a1a; margin-bottom: 3px; }
-  .tp-body { font-size: 12px; color: #555; line-height: 1.5; }
+.badge { display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; vertical-align: middle; }
+.badge-w { background: #EAF3DE; color: #3B6D11; }
+.badge-l { background: #FCEBEB; color: #A32D2D; }
+.badge-hot { background: #FAC775; color: #633806; }
+.badge-info { background: #E6F1FB; color: #185FA5; }
+.badge-warn { background: #FAEEDA; color: #854F0B; }
+.badge-danger { background: #FCEBEB; color: #A32D2D; }
+.badge-success { background: #EAF3DE; color: #3B6D11; }
+.badge-buyers { background: #E6F1FB; color: #185FA5; font-size: 11px; padding: 3px 10px; }
 
-  /* Player/injury rows */
-  .pr { display: flex; align-items: center; gap: 10px; padding: 7px 0; border-bottom: 1px solid #f0ede8; }
-  .pr:last-child { border-bottom: none; }
-  .av { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; flex-shrink: 0; }
-  .av-b { background: #B5D4F4; color: #0C447C; }
-  .av-g { background: #C0DD97; color: #27500A; }
-  .av-a { background: #FAC775; color: #633806; }
-  .av-r { background: #F7C1C1; color: #791F1F; }
-  .av-gr { background: #D3D1C7; color: #444441; }
-  .av-t { background: #9FE1CB; color: #085041; }
-  .pn { font-size: 13px; font-weight: 600; color: #1a1a1a; }
-  .ps { font-size: 11px; color: #666; }
-  .bdg { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 5px; margin-left: auto; white-space: nowrap; }
-  .b-hot { background: #C0DD97; color: #27500A; }
-  .b-ace { background: #B5D4F4; color: #0C447C; }
-  .b-brk { background: #FAC775; color: #633806; }
-  .b-ris { background: #9FE1CB; color: #085041; }
-  .b-wch { background: #D3D1C7; color: #444441; }
-  .b-act { background: #B5D4F4; color: #0C447C; }
-  .eta { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 5px; margin-left: auto; white-space: nowrap; }
-  .e-s { background: #C0DD97; color: #27500A; }
-  .e-m { background: #FAC775; color: #633806; }
-  .e-l { background: #F7C1C1; color: #791F1F; }
-  .e-a { background: #B5D4F4; color: #0C447C; }
+.recap-score { font-size: 24px; font-weight: 700; color: #1a1a1a; margin: 6px 0; }
+.turning-point { background: #f5f5f0; border-left: 3px solid #C0362C; padding: 10px 14px; border-radius: 0 8px 8px 0; font-size: 13px; color: #1a1a1a; margin: 10px 0; line-height: 1.5; }
 
-  /* Two column */
-  .twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .th { font-size: 12px; font-weight: 600; margin-bottom: .4rem; }
-  .th-g { color: #3B6D11; }
-  .th-r { color: #A32D2D; }
-  .tl2 { list-style: none; }
-  .tl2 li { font-size: 12px; color: #555; padding: 3px 0; display: flex; gap: 5px; line-height: 1.4; }
-  .tl2 li::before { content: ""; display: inline-block; width: 5px; height: 5px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
-  .tl2 li.g::before { background: #639922; }
-  .tl2 li.r::before { background: #A32D2D; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
 
-  /* Insight chips */
-  .igrid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: .75rem; }
-  .ich { background: #f8f6f2; border-radius: 8px; padding: .7rem .9rem; }
-  .ict { font-size: 12px; font-weight: 600; color: #1a1a1a; margin-bottom: 3px; }
-  .icb { font-size: 12px; color: #555; line-height: 1.45; }
+.bullet-list { list-style: none; }
+.bullet-list li { font-size: 13px; padding: 4px 0; display: flex; gap: 8px; align-items: flex-start; line-height: 1.5; color: #1a1a1a; }
+.bullet-list li::before { content: ""; width: 7px; height: 7px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+.bullets-green li::before { background: #639922; }
+.bullets-red li::before { background: #A32D2D; }
 
-  /* Next games */
-  .nc { border: 1px solid #e0ddd6; border-radius: 8px; padding: .7rem .9rem; margin-bottom: .5rem; }
-  .nt { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px; flex-wrap: wrap; gap: 4px; }
-  .ng { font-size: 13px; font-weight: 600; color: #1a1a1a; }
-  .nd { font-size: 11px; color: #666; }
-  .nn { font-size: 11px; color: #666; font-style: italic; margin-top: 3px; }
-  .wbdg { padding: 2px 8px; font-size: 10px; font-weight: 600; border-radius: 5px; }
-  .ww { background: #C0DD97; color: #27500A; }
+.player-row { display: flex; align-items: flex-start; gap: 12px; padding: 9px 0; border-bottom: 0.5px solid #e0ddd6; }
+.player-row:last-child { border-bottom: none; }
+.avatar { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; }
+.av-red { background: rgba(192,54,44,0.12); color: #C0362C; }
+.av-blue { background: #E6F1FB; color: #185FA5; }
+.av-green { background: #EAF3DE; color: #3B6D11; }
+.av-amber { background: #FAEEDA; color: #854F0B; }
+.av-teal { background: #E1F5EE; color: #0F6E56; }
+.player-name { font-size: 13px; font-weight: 600; color: #1a1a1a; }
+.player-stat { font-size: 12px; color: #666; margin-top: 2px; line-height: 1.4; }
 
-  /* Alert */
-  .alert-row { background: rgba(192,54,44,.06); border: 1px solid rgba(192,54,44,.2); border-radius: 7px; padding: .6rem .9rem; margin-bottom: .65rem; display: flex; gap: 8px; align-items: flex-start; }
-  .alert-icon { color: #C0362C; font-size: 16px; flex-shrink: 0; margin-top: 1px; font-weight: 700; }
-  .alert-row span { font-size: 12px; color: #1a1a1a; line-height: 1.5; }
+.insight-chip { background: #f5f5f0; border: 0.5px solid #e0ddd6; border-radius: 8px; padding: 11px 14px; font-size: 13px; color: #1a1a1a; margin-bottom: 8px; line-height: 1.55; }
+.chip-label { font-size: 10px; font-weight: 700; color: #888; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 5px; }
 
-  /* Trade bullets */
-  .trade-list { list-style: none; }
-  .trade-list li { display: flex; gap: 8px; padding: 5px 0; border-bottom: 1px solid #f0ede8; font-size: 13px; color: #555; line-height: 1.4; }
-  .trade-list li:last-child { border-bottom: none; }
-  .trade-list li strong { color: #1a1a1a; }
-  .trade-icon { color: #888; flex-shrink: 0; margin-top: 2px; }
+.next-game { display: flex; align-items: flex-start; gap: 12px; padding: 9px 0; border-bottom: 0.5px solid #e0ddd6; }
+.next-game:last-child { border-bottom: none; }
+.ng-date { font-size: 11px; font-weight: 700; color: #C0362C; width: 38px; text-align: center; flex-shrink: 0; line-height: 1.3; }
+.ng-opp { font-size: 13px; font-weight: 600; color: #1a1a1a; }
+.ng-detail { font-size: 12px; color: #666; margin-top: 2px; }
+.ng-why { font-size: 12px; color: #1a1a1a; margin-top: 4px; line-height: 1.45; }
 
-  /* Divider */
-  .div { height: 1px; background: #e8e5e0; margin: .6rem 0; }
+.ask-claude { margin-top: 14px; background: #f0ede8; border-radius: 8px; padding: 12px 16px; }
+.ask-claude strong { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #888; display: block; margin-bottom: 6px; }
+.ask-claude p { font-size: 12px; color: #444; margin: 3px 0; }
 
-  /* Footnote */
-  .fn { font-size: 11px; color: #999; margin-top: .5rem; line-height: 1.5; }
+.footnote { font-size: 11px; color: #aaa; margin-top: 16px; line-height: 1.6; border-top: 0.5px solid #e0ddd6; padding-top: 12px; }
+.con-badge { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
 
-  /* Follow-up prompts (replaces sendPrompt buttons) */
-  .followups { background: #f0ede8; border-radius: 8px; padding: .75rem 1rem; margin-top: .75rem; }
-  .followups p { font-size: 11px; font-weight: 600; color: #666; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .4rem; }
-  .followups ul { list-style: none; }
-  .followups ul li { font-size: 12px; color: #555; padding: 2px 0; }
-  .followups ul li::before { content: "→ "; color: #C0362C; font-weight: 700; }
-
-  /* Footer */
-  footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e0ddd6; font-size: 11px; color: #aaa; text-align: center; line-height: 1.6; }
-
-  /* Responsive */
-  @media (max-width: 600px) {
-    .mg { grid-template-columns: repeat(2, 1fr); }
-    .twocol { grid-template-columns: 1fr; }
-    .igrid { grid-template-columns: 1fr; }
-  }
-
-  /* Print */
-  @media print {
-    body { background: #fff; }
-    .followups { display: none; }
-    .card { break-inside: avoid; }
-    footer { display: none; }
-  }
+@media print {
+  .ask-claude { display: none; }
+  body { background: #fff; }
+  .page { padding: 10px; }
+}
 </style>
 </head>
 <body>
-<div class="container">
+<div class="page">
 
-  <!-- Header -->
-  <div class="hdr">
-    <div class="hdr-top">
-      <span class="cws-pill">CWS</span>
-      <span class="hdr-title">Chicago White Sox — Daily Report</span>
-      <span class="new-pill">&#x21BB; Fresh · June 19, 2026</span>
+<div class="hdr">
+  <div class="hdr-left">
+    <div class="hdr-logo">CWS</div>
+    <div>
+      <div class="hdr h1" style="font-size:18px;font-weight:600;">Chicago White Sox</div>
+      <div class="hdr-sub">Daily Intelligence Report &middot; Monday, June 22, 2026</div>
     </div>
-    <ul>
-      <li class="hi">Update since last report: Kyle Teel went 2-for-3 with a 2-run HR in his Charlotte rehab start (June 16) — MLB return expected within days</li>
-      <li>Record 39-34, 1st in AL Central; tonight faces Skubal (3-3, 2.81 ERA) at Comerica Park, 6:40 PM ET — game not yet played</li>
-      <li>Benintendi's pinch-hit grand slam June 18 ended a 9-game Yankee Stadium losing skid; Sox salvaged the series finale 5-1</li>
-      <li>Both Cubs and White Sox reportedly pursuing the same Cy Young-caliber SP at the deadline — intra-city bidding war emerging</li>
-      <li>Skubal's Tigers confirming seller posture; Detroit 30-44, 5th in AL Central; 2026 shaping up as "The Skubal Deadline"</li>
-      <li>GM Chris Getz publicly pivoted: "We are focused on 2026" — buyers confirmed; White Sox are adding, not standing pat</li>
-      <li>Sean Newcomb (RP) flagged by ESPN as potential outbound piece; Reid Detmers and Sandy Alcantara named as acquisition fits</li>
+  </div>
+  <div style="text-align:right;">
+    <div class="record-big">38&ndash;33</div>
+    <div class="record-sub">1st AL Central &middot; Home vs CLE tonight</div>
+  </div>
+</div>
+
+<div class="exec-box">
+  <div class="section-title" style="color:rgba(255,255,255,0.4);">Top storylines</div>
+  <ul class="headline-bullets">
+    <li>Dropped 2 of 3 in Detroit &mdash; Tigers rallied from 3&ndash;1 down for a 5&ndash;4 walk-off in extras Sunday</li>
+    <li>Benintendi&rsquo;s pinch-hit grand slam vs. Yankees (Thu) ended a 9-game skid in style; then road trip unraveled</li>
+    <li>Murakami update: 80% in running, increasing hitting intensity &mdash; return window is late June/early July</li>
+    <li>Kyle Teel declared &ldquo;a possibility&rdquo; for Monday night vs. Guardians &mdash; his 2026 debut may be imminent</li>
+    <li>Jordan Hicks reinstated from IL (lat) Sunday; Tyler Davis optioned to Triple-A Charlotte</li>
+    <li>Rotation depth crisis deepening: Smith, Schultz, McDougal all on IL; fifth-starter slot unresolved</li>
+    <li>Trade deadline buyers posture firms up &mdash; GM Getz focused on starting pitching (42 days to Aug 3)</li>
+  </ul>
+</div>
+
+<div class="section-title">Team snapshot</div>
+<div class="metric-grid">
+  <div class="metric-card"><div class="metric-label">Record</div><div class="metric-val">38&ndash;33</div><div class="metric-sub">+5 above .500</div></div>
+  <div class="metric-card"><div class="metric-label">Division</div><div class="metric-val">1st</div><div class="metric-sub">AL Central</div></div>
+  <div class="metric-card"><div class="metric-label">Team ERA</div><div class="metric-val">4.4&dagger;</div><div class="metric-sub">19th MLB</div></div>
+  <div class="metric-card"><div class="metric-label">Team HR</div><div class="metric-val">96+</div><div class="metric-sub">4th in MLB</div></div>
+  <div class="metric-card"><div class="metric-label">Streak</div><div class="metric-val">L2</div><div class="metric-sub">Lost series at DET</div></div>
+  <div class="metric-card"><div class="metric-label">Pythag W-L</div><div class="metric-val">37&ndash;38</div><div class="metric-sub">Slightly lucky</div></div>
+</div>
+
+<div class="section-title">Last 10 games</div>
+<div class="l10-row">
+  <div class="tile tile-l">L</div><div class="tile tile-l">L</div><div class="tile tile-w">W</div><div class="tile tile-l">L</div><div class="tile tile-l">L</div><div class="tile tile-w">W</div><div class="tile tile-w">W</div><div class="tile tile-l">L</div><div class="tile tile-l">L</div><div class="tile tile-l">L</div>
+</div>
+
+<div class="section-title">AL Central standings</div>
+<table class="standings">
+  <thead><tr><th>Team</th><th>W</th><th>L</th><th>GB</th></tr></thead>
+  <tbody>
+    <tr class="cws"><td>&#9632; Chicago White Sox</td><td>38</td><td>33</td><td>&mdash;</td></tr>
+    <tr><td>Cleveland Guardians</td><td>37</td><td>34</td><td>1.0</td></tr>
+    <tr><td>Detroit Tigers</td><td>37</td><td>36</td><td>2.0</td></tr>
+    <tr><td>Minnesota Twins</td><td>33</td><td>38</td><td>5.0</td></tr>
+    <tr><td>Kansas City Royals</td><td>32</td><td>45</td><td>8.0&dagger;</td></tr>
+  </tbody>
+</table>
+
+<div class="section-title">Series recap &mdash; at Detroit Tigers (Jun 19&ndash;21)</div>
+<div class="card">
+  <div class="con-badge">
+    <span style="font-size:13px;color:#888;">Series result</span>
+    <span class="badge badge-l">Lost 1&ndash;2</span>
+    <span style="font-size:13px;color:#888;">at Comerica Park</span>
+  </div>
+  <div class="recap-score">Game 3: DET 5 &mdash; CHW 4 (F/10)</div>
+  <div class="turning-point">
+    <strong>Turning point:</strong> Leading 3&ndash;1 after 7, Dillon Dingler homered in the 8th and singled to tie in the 9th. In the 10th, Jacob Gonzalez&rsquo;s errant throw home (instead of holding the runner) loaded the bases for Matt Vierling&rsquo;s walk-off bloop &mdash; a critical base-running decision misread that cost the game.
+  </div>
+  <p style="font-size:13px;margin-top:8px;line-height:1.55;"><strong>Standouts:</strong> Tristan Peters (2 RBI, sac fly in 10th), Luisangel Acu&ntilde;a (1st MLB HR), Davis Martin (quality outing G3, 7+ IP). Newcomb struck by line drive in G2 &mdash; left arm soreness to monitor.</p>
+  <p style="font-size:13px;color:#666;margin-top:6px;">G1: Bullpen day loss 4&ndash;1, Troy Melton dominated (1 hit in 6 IP). G2: Outscored 10&ndash;5 at Yankee. G3: Showed most fight but late collapse.</p>
+</div>
+
+<div class="section-title">Trend analysis</div>
+<div class="two-col">
+  <div class="card">
+    <div style="font-size:12px;font-weight:700;color:#3B6D11;margin-bottom:8px;">&#8593; What&rsquo;s working</div>
+    <ul class="bullet-list bullets-green">
+      <li>Power surge is real &mdash; top-4 in MLB HRs despite Murakami out since May 29</li>
+      <li>Rookie wave delivering: Peters (.294/.352/.450), Braden Montgomery, Acu&ntilde;a</li>
+      <li>Davis Martin (9&ndash;3, 3.31 ERA) has been an ace-level anchor in a thin rotation</li>
+      <li>Sean Burke stabilized: 39.2% whiff rate, 3.89 ERA, 81 IP</li>
+      <li>Division lead held with Murakami, Teel, Schultz, and McDougal all on IL</li>
     </ul>
   </div>
-
-  <!-- Metrics -->
-  <div class="sec">Team snapshot</div>
-  <div class="mg">
-    <div class="mc"><div class="ml">&#x1F3C6; Record</div><div class="mv">39-34</div><div class="ms">.534 win pct</div></div>
-    <div class="mc"><div class="ml">&#x1F4CD; Division</div><div class="mv">1st</div><div class="ms">AL Central</div></div>
-    <div class="mc"><div class="ml">&#x26BE; Home runs</div><div class="mv">102</div><div class="ms">2nd in AL</div></div>
-    <div class="mc"><div class="ml">&#x1F4C8; Team ERA</div><div class="mv">4.43</div><div class="ms">WHIP 1.34</div></div>
-    <div class="mc"><div class="ml">&#x26A1; Runs/game</div><div class="mv">4.7</div><div class="ms">7th in MLB</div></div>
-    <div class="mc"><div class="ml">&#x1F3AF; OBP / AVG</div><div class="mv">.322</div><div class="ms">.240 BA</div></div>
-  </div>
-
-  <!-- Last 10 -->
-  <div class="sec">Last 10 games — 6W 4L</div>
-  <div class="tiles">
-    <div class="tile tw">W</div><div class="tile tl">L</div><div class="tile tl">L</div><div class="tile tw">W</div><div class="tile tw">W</div>
-    <div class="tile tl">L</div><div class="tile tw">W</div><div class="tile tl">L</div><div class="tile tw">W</div><div class="tile tw">W</div>
-  </div>
-
-  <!-- Standings -->
-  <div class="sec">AL Central standings</div>
-  <div class="card" style="padding:.7rem 1rem">
-    <table class="stbl">
-      <thead><tr><th>Team</th><th>W</th><th>L</th><th>Pct</th><th>GB</th></tr></thead>
-      <tbody>
-        <tr class="hl"><td>&#11088; White Sox</td><td>39</td><td>34</td><td>.534</td><td>&#x2014;</td></tr>
-        <tr><td>Guardians</td><td>40</td><td>35</td><td>.533</td><td>&#x2014;</td></tr>
-        <tr><td>Twins</td><td>~30</td><td>~40</td><td>~.429</td><td>~8</td></tr>
-        <tr><td>Tigers</td><td>30</td><td>44</td><td>.405</td><td>9.5</td></tr>
-        <tr><td>Royals</td><td>~27</td><td>~44</td><td>~.380</td><td>~11</td></tr>
-      </tbody>
-    </table>
-    <div class="fn">&#8224; Twins/Royals records estimated; CWS/CLE/DET confirmed via ESPN, Fox Sports, Bleacher Nation (June 19 AM).</div>
-  </div>
-
-  <!-- Recap -->
-  <div class="sec">Game recap — White Sox 5, Yankees 1 · June 18 (most recent game)</div>
   <div class="card">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:.6rem;flex-wrap:wrap">
-      <span style="font-size:17px;font-weight:700;color:#1a1a1a">White Sox 5 &nbsp;&#xB7;&nbsp; Yankees 1</span>
-      <span class="wbdg ww">Win</span>
-      <span style="font-size:11px;color:#888;margin-left:auto">Yankee Stadium &nbsp;&#xB7;&nbsp; June 18</span>
-    </div>
-    <div class="tp">
-      <div class="tp-label">Turning point — 8th inning</div>
-      <div class="tp-body">Tied 1-1. Antonacci doubled off Cruz, Hill plunked Gonzalez and Peters to load the bases. Benintendi (batting for Grichuk) drove Doval's first pitch — a 100 mph sinker — into right-center for a go-ahead grand slam. Series salvaged; first Bronx win since June 8, 2023.</div>
-    </div>
-    <div class="pr"><div class="av av-b">AB</div><div><div class="pn">Andrew Benintendi</div><div class="ps">Pinch-hit grand slam (4th career), 4 RBI off Doval in the 8th inning</div></div><span class="bdg b-hot">Hot</span></div>
-    <div class="pr"><div class="av av-g">CM</div><div><div class="pn">Colson Montgomery</div><div class="ps">Solo HR + threw out Volpe at 3B on a defensive gem</div></div><span class="bdg b-brk">Breakout</span></div>
-    <div class="pr"><div class="av av-gr">SB</div><div><div class="pn">Sean Burke (W, 4-4)</div><div class="ps">7.1 IP, 1 ER, 5 H, 8 K — dominant bulk outing after opener Hudson</div></div><span class="bdg b-ace">Ace</span></div>
-    <div class="div"></div>
-    <div style="font-size:12px;color:#666">Series: Went 1-2 at New York. Lost games 1-2 badly (2-12, 5-10), salvaged the finale. Tonight opens a 3-game set at Detroit.</div>
-  </div>
-
-  <!-- Trend -->
-  <div class="sec">Trend analysis</div>
-  <div class="card">
-    <div class="twocol">
-      <div>
-        <div class="th th-g">&#10003; What's working</div>
-        <ul class="tl2">
-          <li class="g"><span>Depth without Murakami — 5+ runs in 7 of 9 games without their top slugger; no lineup collapse</span></li>
-          <li class="g"><span>Power surge — 102 HR, 2nd in AL; averaging 1.4/game; Benintendi on fire</span></li>
-          <li class="g"><span>Burke as rotation anchor — 8 K, 1 ER in 7.1 IP Thursday; legitimate top-3 asset</span></li>
-          <li class="g"><span>Prospect pipeline delivering — B. Montgomery, J. Gonzalez contributing immediately</span></li>
-          <li class="g"><span>Home fortress — 20-11 at Rate Field; dominant where it counts most</span></li>
-        </ul>
-      </div>
-      <div>
-        <div class="th th-r">&#x26A0; Concerns</div>
-        <ul class="tl2">
-          <li class="r"><span>Road record 15-22 — worst stretch of the roster; October requires winning away</span></li>
-          <li class="r"><span>Fedde tonight (2-5, 4.50) vs Skubal — lopsided matchup; career 8-2 for Skubal vs CWS</span></li>
-          <li class="r"><span>IL pile-up — Murakami, Teel, Hicks, Schultz, Gilbert, Hays all missing; depth tested</span></li>
-          <li class="r"><span>LHB exposure — Skubal career 8-2 vs CWS; lineup vulnerable to elite southpaws</span></li>
-          <li class="r"><span>Back-end rotation shaky — Fedde and Shane Smith (demoted) leave a clear gap</span></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- Injuries -->
-  <div class="sec">Injury &amp; roster watch</div>
-  <div class="card">
-    <div class="alert-row">
-      <span class="alert-icon">&#x2605;</span>
-      <span><strong>Kyle Teel update (June 16):</strong> Hit a 2-run HR and went 2-for-3 in his first Charlotte rehab game. Manager Venable said return could be "a matter of days." MLB debut imminent for the Crochet-trade catcher.</span>
-    </div>
-    <div class="pr"><div class="av av-a">KT</div><div><div class="pn">Kyle Teel — C</div><div class="ps">Hamstring/LCL sprain &nbsp;&#xB7;&nbsp; 60-day IL (Mar 25) &nbsp;&#xB7;&nbsp; 2-for-3, 2-run HR in Charlotte rehab June 16</div></div><span class="eta e-s">Days away</span></div>
-    <div class="pr"><div class="av av-r">MM</div><div><div class="pn">Munetaka Murakami — 1B</div><div class="ps">Hamstring Grade 2 &nbsp;&#xB7;&nbsp; 10-day IL (May 30) &nbsp;&#xB7;&nbsp; Running, hitting off tee, received PRP injection; late June/July target</div></div><span class="eta e-m">Late June/July</span></div>
-    <div class="pr"><div class="av av-gr">NS</div><div><div class="pn">Noah Schultz — LHP</div><div class="ps">Knee tendinitis &nbsp;&#xB7;&nbsp; 15-day IL (May 26) &nbsp;&#xB7;&nbsp; 1.2 IP rehab outing Charlotte June 16; ramping up</div></div><span class="eta e-s">Imminent</span></div>
-    <div class="pr"><div class="av av-gr">JH</div><div><div class="pn">Jordan Hicks — RHP</div><div class="ps">Right lat strain &nbsp;&#xB7;&nbsp; 15-day IL (May 21) &nbsp;&#xB7;&nbsp; Began rehab assignment with Charlotte June 19</div></div><span class="eta e-s">~Late June</span></div>
-    <div class="pr"><div class="av av-gr">TG</div><div><div class="pn">Tyler Gilbert — LHP</div><div class="ps">Left shoulder impingement &nbsp;&#xB7;&nbsp; 15-day IL (June 10)</div></div><span class="eta e-m">Late June</span></div>
-    <div class="pr"><div class="av av-r">DT</div><div><div class="pn">Drew Thorpe — RHP</div><div class="ps">Tommy John + appendectomy &nbsp;&#xB7;&nbsp; 60-day IL (May 5) &nbsp;&#xB7;&nbsp; Resumed throwing; full timeline TBD</div></div><span class="eta e-l">2026 TBD</span></div>
-    <div class="pr"><div class="av av-g">BM</div><div><div class="pn">Braden Montgomery — OF &nbsp;<span style="font-size:10px;font-weight:400">(called up June 10)</span></div><div class="ps">Walk-off HR in MLB debut &nbsp;&#xB7;&nbsp; .314/.422/.548 in minors &nbsp;&#xB7;&nbsp; Crochet-trade headliner</div></div><span class="eta e-a">Active</span></div>
-  </div>
-
-  <!-- Player spotlight -->
-  <div class="sec">Player spotlight</div>
-  <div class="card">
-    <div class="pr"><div class="av av-b">AB</div><div><div class="pn">Andrew Benintendi — DH/OF</div><div class="ps">Grand slam Thursday; HR in 4 of last 5 games; former Yankee punishing his old team all series</div></div><span class="bdg b-hot">Hot</span></div>
-    <div class="pr"><div class="av av-g">CM</div><div><div class="pn">Colson Montgomery — SS</div><div class="ps">Homered Thursday + key defensive play; franchise-level prospect arriving for real in 2026</div></div><span class="bdg b-brk">Breakout</span></div>
-    <div class="pr"><div class="av av-a">MV</div><div><div class="pn">Miguel Vargas — 2B</div><div class="ps">Hit safely in each of CWS's last 9 Friday games; quietly one of the team's best bats all season</div></div><span class="bdg b-hot">Hot</span></div>
-    <div class="pr"><div class="av av-g">BM</div><div><div class="pn">Braden Montgomery — RF</div><div class="ps">Walk-off HR on debut; 15.1% BB rate; 152 wRC+ in minors; plate discipline already MLB-ready</div></div><span class="bdg b-ris">Rising</span></div>
-    <div class="pr"><div class="av av-t">DM</div><div><div class="pn">Davis Martin — RHP</div><div class="ps">ESPN's Jeff Passan named him one of the "two biggest breakouts" of the White Sox's 2026 season</div></div><span class="bdg b-brk">Breakout</span></div>
-  </div>
-
-  <!-- Trade outlook -->
-  <div class="sec">Trade &amp; front office outlook</div>
-  <div class="card">
-    <ul class="trade-list">
-      <li><span class="trade-icon">&#x21C4;</span><div><strong>Posture: Buy confirmed</strong> — GM Chris Getz publicly flipped: "We are focused on 2026." White Sox are active buyers. Approximately 41 days to July 30 deadline.</div></li>
-      <li><span class="trade-icon">&#x1F525;</span><div><strong>The Skubal narrative:</strong> 2026 is being called "The Skubal Deadline." Detroit (30-44) likely sellers; both Sox and Cubs pursuing the same Cy Young pitcher per Yahoo Sports — potential Chicago intra-city bidding war. Skubal is a free agent after 2026, worth ~$10M remaining salary.</div></li>
-      <li><span class="trade-icon">&#x26A0;</span><div><strong>Primary need: SP depth</strong> — ESPN names Reid Detmers as a fit; Sandy Alcantara (90% trade chance) and Freddy Peralta also listed as White Sox fits. A 3rd-4th starter is the clear rotation gap.</div></li>
-      <li><span class="trade-icon">&#x1F6E1;</span><div><strong>Not available:</strong> Colson Montgomery, Braden Montgomery, Sam Antonacci, Chase Meidroth, and Kyle Teel are foundational. Expect no core pieces traded away.</div></li>
-      <li><span class="trade-icon">&#x2192;</span><div><strong>Potential outbound:</strong> ESPN's Jeff Passan lists Sean Newcomb (RP) as a possible trade chip. Goal is adding controllable players for 2026 and beyond.</div></li>
+    <div style="font-size:12px;font-weight:700;color:#A32D2D;margin-bottom:8px;">&#8595; Concerns</div>
+    <ul class="bullet-list bullets-red">
+      <li>Rotation depth razor thin &mdash; fifth-starter slot unresolved all month</li>
+      <li>Pythagorean W-L (37&ndash;38) suggests team is winning above run-differential expectation</li>
+      <li>Anthony Kay walks a batter in every single appearance (15/15)</li>
+      <li>Late-game bullpen decision-making: Sunday&rsquo;s 10th inning throw-home call cost the game</li>
+      <li>Pereira concussion adds more outfield depth pressure</li>
     </ul>
   </div>
+</div>
 
-  <!-- Smart fan insights -->
-  <div class="sec">Smart fan insights</div>
-  <div class="igrid">
-    <div class="ich"><div class="ict">Skubal vs CWS history</div><div class="icb">Career 8-2, 3.72 ERA in 11 starts against the Sox — worst possible historical matchup for tonight. Fedde is 0-1, 4.35 ERA in 4 career outings vs Detroit. Lopsided on paper.</div></div>
-    <div class="ich"><div class="ict">Fedde's June form</div><div class="icb">After a brutal May (9.00 ERA in 5 appearances), Fedde has allowed just 1 ER in 12.2 June innings across 3 outings. He may be turning a corner heading into tonight.</div></div>
-    <div class="ich"><div class="ict">Two-year turnaround</div><div class="icb">Just 24 months after a franchise-record 121-loss season, Chicago leads its division on Father's Day 2026. The Crochet trade, Murakami signing, and Martin/Vargas breakouts make this one of baseball's best stories.</div></div>
-    <div class="ich"><div class="ict">Teel return impact</div><div class="icb">Once Teel returns, one-third of the lineup could be Crochet-trade products: Teel, Meidroth, and B. Montgomery. This team hasn't yet played at full strength.</div></div>
-    <div class="ich"><div class="ict">Pitch-count wrinkle</div><div class="icb">Skubal hasn't gone 6+ innings since his elbow scope. His June return start lasted 4.2 IP. Hunt early at-bats aggressively — watch for the hook at 70-80 pitches.</div></div>
-    <div class="ich"><div class="ict">Road problem, urgent</div><div class="icb">At 15-22 on the road, this Detroit series is a reset opportunity. The White Sox are 3-0 vs Detroit in 2026 — history favors them even with Skubal on the mound.</div></div>
-  </div>
-
-  <!-- Next games -->
-  <div class="sec">What to watch next</div>
-  <div class="card">
-    <div class="nc">
-      <div class="nt"><span class="ng">Tonight — at Detroit (Comerica Park)</span><span class="nd">6:40 PM ET &nbsp;&#xB7;&nbsp; DSN/CHSN</span></div>
-      <div class="nd" style="margin-bottom:3px">Fedde (2-5, 4.50) vs Skubal (3-3, 2.81) &nbsp;&#xB7;&nbsp; Tigers -246, Sox +197</div>
-      <div class="nn">Fedde's June resurgence collides with Skubal's career dominance. The X factor: pitch-count management on Skubal's first Comerica start post-surgery.</div>
-    </div>
-    <div class="nc">
-      <div class="nt"><span class="ng">Sat June 20 — at Detroit</span><span class="nd">1:10 PM ET &nbsp;&#xB7;&nbsp; DSN/CHSN</span></div>
-      <div class="nd" style="margin-bottom:3px">Tigers SP: Troy Melton</div>
-      <div class="nn">Far more favorable matchup — a chance to split or take the series and chip at the road record.</div>
-    </div>
-    <div class="nc">
-      <div class="nt"><span class="ng">Sun June 21 — at Detroit (Father's Day)</span><span class="nd">1:40 PM ET &nbsp;&#xB7;&nbsp; DSN/CHSN</span></div>
-      <div class="nd" style="margin-bottom:3px">SP TBD</div>
-      <div class="nn">Series rubber match. White Sox are 3-0 vs Detroit in 2026 — a sweep here would be massive for the standings and road confidence.</div>
-    </div>
-    <div class="followups">
-      <p>Ask Claude:</p>
-      <ul>
-        <li>Should the White Sox trade for Tarik Skubal at the deadline, and what would it cost them?</li>
-        <li>What does Kyle Teel returning mean for the White Sox lineup and catching situation?</li>
-        <li>How should the White Sox approach Skubal at the plate tonight given his pitch-count limits?</li>
-      </ul>
+<div class="section-title">Injury &amp; roster watch</div>
+<div class="card">
+  <div class="player-row">
+    <div class="avatar av-amber">MM</div>
+    <div>
+      <div class="player-name">Munetaka Murakami &nbsp;<span class="badge badge-warn">10-day IL</span></div>
+      <div class="player-stat">R hamstring strain &middot; IL since May 30 &middot; 20 HR before injury</div>
+      <div class="player-stat" style="color:#1a1a1a;">80% in running, increasing hitting intensity &mdash; ETA: late June/early July</div>
     </div>
   </div>
+  <div class="player-row">
+    <div class="avatar av-blue">KT</div>
+    <div>
+      <div class="player-name">Kyle Teel &nbsp;<span class="badge badge-info">IL (preseason)</span></div>
+      <div class="player-stat">Hamstring + sprained LCL &middot; No 2026 MLB appearance yet</div>
+      <div class="player-stat" style="color:#3B6D11;">Venable: return &ldquo;a possibility&rdquo; for Mon night vs. CLE</div>
+    </div>
+  </div>
+  <div class="player-row">
+    <div class="avatar av-red">EP</div>
+    <div>
+      <div class="player-name">Everson Pereira &nbsp;<span class="badge badge-danger">7-day concussion IL</span></div>
+      <div class="player-stat">Hit wall making leaping catch Jun 17 vs. NYY &middot; ETA: ~Jun 26</div>
+    </div>
+  </div>
+  <div class="player-row">
+    <div class="avatar av-red">NS</div>
+    <div>
+      <div class="player-name">Noah Schultz &nbsp;<span class="badge badge-warn">15-day IL</span></div>
+      <div class="player-stat">R knee patellar tendinitis &middot; Began Charlotte rehab Jun 16</div>
+    </div>
+  </div>
+  <div class="player-row">
+    <div class="avatar av-red">HS</div>
+    <div>
+      <div class="player-name">Hagen Smith &nbsp;<span class="badge badge-danger">Shoulder impingement</span></div>
+      <div class="player-stat">L shoulder impingement &middot; Top-4 prospect &middot; Out 4+ weeks</div>
+    </div>
+  </div>
+  <div class="player-row">
+    <div class="avatar av-green">JH</div>
+    <div>
+      <div class="player-name">Jordan Hicks &nbsp;<span class="badge badge-success">Activated Jun 21</span></div>
+      <div class="player-stat">Reinstated from lat strain IL &middot; Tyler Davis optioned to Charlotte</div>
+    </div>
+  </div>
+</div>
 
-  <div class="fn">&#8224; Guardians, Twins, Royals records partially estimated from pre-game data (June 19 AM). Sox 39-34 confirmed ESPN/Fox/Bleacher Nation. Skubal splits per Deadspin/MLB.com. Injury updates per ESPN/SoxMachine (June 16-17). Trade intelligence per ESPN Passan, SI, FanSided, Yahoo Sports (June 17-19).</div>
+<div class="section-title">Player spotlight</div>
+<div class="card">
+  <div class="player-row">
+    <div class="avatar av-red">DM</div>
+    <div style="flex:1;display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:4px;">
+      <div>
+        <div class="player-name">Davis Martin &nbsp;<span class="badge badge-hot">Ace</span></div>
+        <div style="font-size:11px;color:#888;">RHP &middot; SP</div>
+        <div class="player-stat">9&ndash;3, 3.31 ERA &middot; Staff anchor, contract-controlled</div>
+      </div>
+    </div>
+  </div>
+  <div class="player-row">
+    <div class="avatar av-blue">CM</div>
+    <div>
+      <div class="player-name">Colson Montgomery &nbsp;<span class="badge badge-success">Rising</span></div>
+      <div style="font-size:11px;color:#888;">SS &middot; 23 years old</div>
+      <div class="player-stat">.225/.319/.502 &middot; 19 HR, 13 2B, 44 RBI &middot; Power-first rookie</div>
+    </div>
+  </div>
+  <div class="player-row">
+    <div class="avatar av-green">TP</div>
+    <div>
+      <div class="player-name">Tristan Peters &nbsp;<span class="badge badge-success">Breakout</span></div>
+      <div style="font-size:11px;color:#888;">CF &middot; Rookie &middot; 26 years old</div>
+      <div class="player-stat">.294/.352/.450 in 68 G &middot; Elite two-way outfield play</div>
+    </div>
+  </div>
+  <div class="player-row">
+    <div class="avatar av-amber">AB</div>
+    <div>
+      <div class="player-name">Andrew Benintendi &nbsp;<span class="badge badge-hot">Hot</span></div>
+      <div style="font-size:11px;color:#888;">LF/DH &middot; Veteran</div>
+      <div class="player-stat">3 HR in last 17 PA &middot; PH grand slam Thu ended 9-game skid</div>
+    </div>
+  </div>
+  <div class="player-row">
+    <div class="avatar av-teal">SB</div>
+    <div>
+      <div class="player-name">Sean Burke &nbsp;<span class="badge badge-info">Watch</span></div>
+      <div style="font-size:11px;color:#888;">RHP &middot; Long reliever</div>
+      <div class="player-stat">4&ndash;4, 3.89 ERA, 81 IP &middot; 39.2% whiff rate &middot; Key bounce-back Thu vs NYY</div>
+    </div>
+  </div>
+</div>
 
-  <footer>
-    Generated by Claude &nbsp;&#xB7;&nbsp; Chicago White Sox Daily Report &nbsp;&#xB7;&nbsp; June 19, 2026<br>
-    All data sourced from live web searches. Stats subject to change after tonight's game.
-  </footer>
+<div class="section-title">Trade &amp; front office outlook</div>
+<div class="card">
+  <p style="font-size:13px;font-weight:600;margin-bottom:10px;"><span class="badge badge-buyers">BUYERS</span> &nbsp;42 days to August 3 deadline</p>
+  <ul class="bullet-list bullets-green">
+    <li>GM Getz publicly signaled buy posture: &ldquo;We have higher hopes than just 2026&rdquo;</li>
+    <li>Primary need: starting pitching &mdash; rotation is 19th in ERA, 20th in K rate</li>
+    <li>Moonshot target: Twins SP Joe Ryan (3.17 ERA, 0.996 WHIP, 5.75 K/BB ratio)</li>
+    <li>NOT available: Davis Martin, Colson Montgomery, Murakami, and core rookie core</li>
+    <li>Likely movers: Sean Newcomb (rental LHP) and Austin Hays (60-day IL, rental OF) if sellers emerge</li>
+    <li>Derek Hill already traded to Phillies for Dylan Campbell + Jose Colmenares (prospects)</li>
+  </ul>
+</div>
+
+<div class="section-title">Smart fan insights</div>
+<div class="insight-chip">
+  <div class="chip-label">Pythagorean gap</div>
+  Baseball-Reference&rsquo;s expected W-L is 37&ndash;38 vs. actual 38&ndash;33 &mdash; the Sox are outperforming their run differential by ~6 games. Sustainable short-term with elite bullpen usage, but a warning sign for second-half regression without rotation upgrades.
+</div>
+<div class="insight-chip">
+  <div class="chip-label">Murakami HR pace</div>
+  20 HRs in 57 games = 56-HR pace over 162 games &mdash; a top-5 all-time pace if sustained. Even at 80% health on return, adding that bat back transforms the lineup vs. postseason-caliber pitching.
+</div>
+<div class="insight-chip">
+  <div class="chip-label">Colson Montgomery All-Star case</div>
+  .225 BA won&rsquo;t generate casual fan votes, but .502 SLG and 19 HRs from a 23-year-old SS is genuinely historic production for a rookie at the position. AL All-Star snub would be analytically indefensible.
+</div>
+<div class="insight-chip">
+  <div class="chip-label">Bullpen construction risk</div>
+  With Hicks back and Burke stabilized, the pen is solid. But Kay&rsquo;s walk rate (1+ BB in every appearance) becomes a playoff liability. The deadline rotation add is about playoff survival, not just the regular season.
+</div>
+<div class="insight-chip">
+  <div class="chip-label">Teel debut tonight?</div>
+  Venable called it &ldquo;a possibility.&rdquo; Teel hit .273/.375/.411 as a rookie last year. Adding a true catcher with plate discipline &mdash; ahead of Murakami&rsquo;s return &mdash; could flip the lineup depth chart within 2 weeks.
+</div>
+
+<div class="section-title">What to watch next</div>
+<div class="card">
+  <div class="next-game">
+    <div class="ng-date">Mon<br>Jun 22</div>
+    <div>
+      <div class="ng-opp">vs. Cleveland Guardians &middot; Rate Field</div>
+      <div class="ng-detail">Kay (6&ndash;2, 4.61) vs. Williams (9&ndash;4, 3.83) &middot; ~7:10 PM CT &middot; CHSN</div>
+      <div class="ng-why">Critical AL Central series opener &mdash; CLE is 1 game back. Kay&rsquo;s walk tendencies vs. Guardians contact-first approach is the key mismatch.</div>
+    </div>
+  </div>
+  <div class="next-game">
+    <div class="ng-date">Tue<br>Jun 23</div>
+    <div>
+      <div class="ng-opp">vs. Cleveland Guardians &middot; Rate Field</div>
+      <div class="ng-detail">Probable: TBD (bullpen day?) vs. CLE TBD &middot; CHSN</div>
+      <div class="ng-why">Rotation depth tested again. Watch for Schultz Charlotte rehab news &mdash; a successful outing could fast-track his return to this slot.</div>
+    </div>
+  </div>
+  <div class="next-game">
+    <div class="ng-date">Wed<br>Jun 24</div>
+    <div>
+      <div class="ng-opp">vs. Cleveland Guardians &middot; Rate Field</div>
+      <div class="ng-detail">Probable: Davis Martin (9&ndash;3) &middot; CHSN</div>
+      <div class="ng-why">Martin vs. CLE is the series marquee. A sweep keeps CWS firmly in control heading into the All-Star break.</div>
+    </div>
+  </div>
+</div>
+
+<div class="ask-claude">
+  <strong>Ask Claude for more</strong>
+  <p>&#8599; &ldquo;Give me a deep dive on Davis Martin &mdash; is he a legitimate ace or a mirage?&rdquo;</p>
+  <p>&#8599; &ldquo;Model out the White Sox roster once Murakami and Teel both return &mdash; how does the lineup change?&rdquo;</p>
+  <p>&#8599; &ldquo;What&rsquo;s the realistic trade package to acquire Joe Ryan from Minnesota?&rdquo;</p>
+</div>
+
+<div class="footnote">
+  &dagger; Data notes: Team ERA (4.4) per StatMuse ranking context &mdash; single-source, not cross-verified. AL Central standings approximate post-Jun 21 games; KC GB estimated. Last-10 game tiles reconstructed from game log (Jun 12&ndash;21) &mdash; W/L ordering approximate. GB for non-CWS teams not fully cross-verified across 2+ sources. &nbsp;&bull;&nbsp; Generated by Claude &middot; June 22, 2026
+</div>
 
 </div>
 </body>
